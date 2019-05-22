@@ -1,0 +1,25 @@
+<h1 class = "text-center">Add a restaurant to our database</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <%= simple_form_for @restaurant do |f| %>
+        <% if @restaurant.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @restaurant.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :phone_number %>
+        <%= f.input :category %>
+        <%= f.submit "Add a restaurant", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

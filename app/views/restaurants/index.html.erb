@@ -1,0 +1,21 @@
+<h1 class="text-center">Restaurants</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <% @restaurants.each do |restaurant| %>
+          <div class="card-deck mb-2">
+            <div class = "card">
+              <div class = "card-body card-positioning">
+                <h2><%= link_to restaurant.name, restaurant_path(restaurant), class: "plain-link" %></h2>
+                <p>Address: <%= restaurant.address %></p>
+                <p>Category: <%= restaurant.category.capitalize %></p>
+                <p>Phone number: <%= restaurant.phone_number %></p>
+             </div>
+           </div>
+         </div>
+      <% end %>
+    </div>
+  </div>
+</div>
