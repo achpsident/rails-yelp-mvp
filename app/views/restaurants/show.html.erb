@@ -7,7 +7,7 @@
         <div class = "card-body card-positioning">
           <h1 class="text-center"><%= @restaurant.name %></h1>
           <p>Name: <%= @restaurant.address %></p>
-          <p>Category:<%= @restaurant.category %></p>
+          <p>Category:<%= @restaurant.category.capitalize %></p>
           <p>Phone number: <%= @restaurant.phone_number %></p>
           <p><%= link_to restaurants_path do %>
             <i class="fas fa-undo"></i>
@@ -29,7 +29,11 @@
         <%  @restaurant.reviews.each do |review|  %>
           <div class = "card">
             <div class= "card-body card-positioning">
-              <p>Rating: <%= "*" *review.rating  %>  </p>
+              <p>Rating:
+              <% review.rating.times do  %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              </p>
               <p>Description: <%= review.content %> </p>
             </div>
           </div>
